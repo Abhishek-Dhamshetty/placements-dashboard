@@ -17,7 +17,7 @@ function Dashboard() {
 
   const fetchFiles = async () => {
     try {
-      const response = await axios.get("http://localhost:5000/api/files")
+      const response = await axios.get("https://placements-dashboard.onrender.com/api/files")
       const data = response.data
       console.log("arr",response.data)
 
