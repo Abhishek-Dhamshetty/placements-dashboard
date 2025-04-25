@@ -18,7 +18,7 @@ function DataViewer({ fileId }) {
   const fetchData = async () => {
     setLoading(true)
     try {
-      const response = await axios.get(`http://localhost:5000/api/files/${fileId}`)
+      const response = await axios.get(`https://placements-dashboard.onrender.com/api/files/${fileId}`)
       setData(response.data) ;
       console.log("abbu",JSON.stringify(response.data))
     } catch (error) {
@@ -41,7 +41,7 @@ function DataViewer({ fileId }) {
     updatedRow[column] = editValue
 
     try {
-      const response = await fetch(`http://localhost:5000/api/files/${fileId}/rows/${rowIndex}`, {
+      const response = await fetch(`https://placements-dashboard.onrender.com/api/files/${fileId}/rows/${rowIndex}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
@@ -70,7 +70,7 @@ function DataViewer({ fileId }) {
 
   const handleDeleteRow = async (rowIndex) => {
     try {
-      const response = await fetch(`http://localhost:5000/api/files/${fileId}/rows/${rowIndex}`, {
+      const response = await fetch(`https://placements-dashboard.onrender.com/api/files/${fileId}/rows/${rowIndex}`, {
         method: "DELETE",
       })
 
@@ -86,7 +86,7 @@ function DataViewer({ fileId }) {
 
   const handleAddRow = async () => {
     try {
-      const response = await fetch(`http://localhost:5000/api/files/${fileId}/rows`, {
+      const response = await fetch(`https://placements-dashboard.onrender.com/api/files/${fileId}/rows`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
