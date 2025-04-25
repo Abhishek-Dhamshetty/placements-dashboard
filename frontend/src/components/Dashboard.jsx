@@ -17,7 +17,7 @@ const Dashboard = () => {
 
   useEffect(() => {
     setLoading(true);
-    axios.get(`http://localhost:5000/api/placements/${year}`)
+    axios.get(`https://placements-dashboard.onrender.com/api/placements/${year}`)
       .then(res => {
         console.log("API Response:", res.data);
         if (res.data.error) {
